@@ -2,23 +2,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title> PG Official</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+    <! icon Reference>
 </head>
 <body>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn"><i class="fas fa-bars"></i>
-        </label>
-        <label class ="logo">Pratik G.</label>
-        <ul>
-            <li><a class="active" href="profolio .html">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">CATEGORIES</a></li>
-            <li><a href="#">CONTACT</a></li>
-        </ul>
-    </nav>
-    <section> </section>
+    <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
+        <! This section creates the left sidebar with navigation links.>
+        <header class="profile-wrapper">
+        <a href="#" id="avatar" class="rounded-circle">
+            <img src="images/my my.jpg" width="120" height="150" alt="avatar" onerror="this.style.display='none'">
+        </a>
+            <h1 class="site-title"> Pratik Giri </h1>
+            <p class="site-subtitle fst-italic mb-0">I may not belive in myself, but I belive in what I'm doing</p>
+        </header>
+        <nav class = "flex-column flex-grow-1 w-100 ps-0">
+            <ul class = "nav">
+                <li class="nav-item"></liclass>
+                    <a href="#" class="nav-link">
+                        <i class="fa-fw fas fa-home"></i>
+                        <span>HOME</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href = "#">
+                        <i class="fa-fw fas fa-info-circle"></i>
+                        ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href = "#">
+                        <i class="fa-fw fas fa-stream"></i>
+                        CATEGORIES</a>
+                </li>
+                <li class="nav-item">
+                    <a href = "#">
+                        <i class="fa-fw fas fa-archive"></i>
+                        ARCHIVES</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main aria-label="Main Content">
+        <div id="post-list"></div>
+        <img src="images/my_image.jpg" width="150">
+    </main>
 </body>
 </html>

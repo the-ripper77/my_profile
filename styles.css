@@ -1235,5 +1235,15 @@ footer a:hover {
     footer p {
         font-size: 0.9rem;
     }
+
+    .sidebar-bottom {
+        display: flex !important;
+        justify-content: center;
+        gap: 15px;
+        margin-top: auto;
+    }
+    .sidebar-bottom a {
+        display: flex !important;
+    }
 }
 

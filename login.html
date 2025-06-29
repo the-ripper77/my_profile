@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.4s;
+    }
+    .login-container {
+      background: #fff;
+      padding: 48px 36px 38px 36px;
+      border-radius: 18px;
+      box-shadow: 0 8px 40px rgba(59,130,246,0.13), 0 1.5px 8px rgba(118,75,162,0.07);
+      border: 1.5px solid #ececff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 28px;
+      width: 100%;
+      max-width: 400px;
+      position: relative;
+      animation: fadeIn 0.8s cubic-bezier(.4,2,.6,1) 1;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px) scale(0.98); }
+      to { opacity: 1; transform: none; }
+    }
+    .tab-group {
+      display: flex;
+      width: 100%;
+      margin-bottom: 18px;
+      background: #f3f4f6;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(59,130,246,0.04);
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 13px 0 11px 0;
+      cursor: pointer;
+      font-weight: 600;
+      color: #764ba2;
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 1.08rem;
+      letter-spacing: 0.2px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .tab.active {
+      color: #fff;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 2px 8px rgba(118,75,162,0.08);
+    }
+    .form-section {
+      width: 100%;
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+      align-items: center;
+      animation: fadeIn 0.7s cubic-bezier(.4,2,.6,1) 1;
+    }
+    .form-section.active {
+      display: flex;
+    }
+    .input-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+    }
+    .input-group label {
+      font-size: 0.98rem;
+      color: #764ba2;
+      font-weight: 500;
+      margin-left: 2px;
+    }
+    .input-group input {
+      padding: 10px 14px;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #f8fafc;
+      color: #222;
+      outline: none;
+      transition: border 0.2s;
+      box-shadow: 0 1px 4px rgba(59,130,246,0.03);
+    }
+    .input-group input:focus {
+      border: 1.5px solid #764ba2;
+      background: #fff;
+    }
+    .form-btn {
+      width: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 8px;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.07);
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .form-btn:hover {
+      background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+      box-shadow: 0 4px 16px rgba(59,130,246,0.13);
+    }
+    .google-btn {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      color: #222;
+      border: 1.5px solid #e5e7eb;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(59,130,246,0.07);
+      transition: background 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      width: 100%;
+      justify-content: center;
+    }
+    .google-btn:hover {
+      background: #f3f4f6;
+      box-shadow: 0 4px 16px rgba(59,130,246,0.13);
+    }
+    .google-icon {
+      width: 24px;
+      height: 24px;
+    }
+    .form-divider {
+      width: 100%;
+      text-align: center;
+      color: #b0b3b8;
+      margin: 8px 0 0 0;
+      font-size: 0.98rem;
+      position: relative;
+    }
+    .form-divider:before, .form-divider:after {
+      content: '';
+      display: inline-block;
+      width: 40%;
+      height: 1px;
+      background: #e5e7eb;
+      vertical-align: middle;
+      margin: 0 8px;
+    }
+    .error-msg {
+      color: #e53e3e;
+      font-size: 0.98rem;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    .success-msg {
+      color: #22c55e;
+      font-size: 0.98rem;
+      margin-bottom: 0;
+      text-align: center;
+    }
+    @media (max-width: 500px) {
+      .login-container {
+        padding: 24px 4vw 18px 4vw;
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="tab-group">
+      <button class="tab active" id="tab-signin" type="button">Sign In</button>
+      <button class="tab" id="tab-register" type="button">Create Account</button>
+    </div>
+    <div class="form-section active" id="section-signin">
+      <form id="login-form" autocomplete="off" style="width:100%;display:flex;flex-direction:column;gap:14px;">
+        <div class="input-group">
+          <label for="login-email">Email</label>
+          <input type="email" id="login-email" name="email" required autocomplete="username">
+        </div>
+        <div class="input-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" name="password" required autocomplete="current-password">
+        </div>
+        <button class="form-btn" type="submit">Sign In</button>
+        <div class="error-msg" id="login-error"></div>
+      </form>
+      <a class="google-btn" href="/auth/google">
+        <img class="google-icon" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+        Sign in with Google
+      </a>
+    </div>
+    <div class="form-section" id="section-register">
+      <form id="register-form" autocomplete="off" style="width:100%;display:flex;flex-direction:column;gap:14px;">
+        <div class="input-group">
+          <label for="register-name">Full Name</label>
+          <input type="text" id="register-name" name="name" required>
+        </div>
+        <div class="input-group">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" name="email" required autocomplete="username">
+        </div>
+        <div class="input-group">
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" name="password" required autocomplete="new-password">
+        </div>
+        <div class="input-group">
+          <label for="register-confirm">Confirm Password</label>
+          <input type="password" id="register-confirm" name="confirm" required autocomplete="new-password">
+        </div>
+        <button class="form-btn" type="submit">Create Account</button>
+        <div class="error-msg" id="register-error"></div>
+        <div class="success-msg" id="register-success"></div>
+      </form>
+      <a class="google-btn" href="/auth/google">
+        <img class="google-icon" src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google icon">
+        Sign up with Google
+      </a>
+    </div>
+  </div>
+  <button id="fab-create-account" title="Create Account" style="position:fixed;bottom:36px;right:36px;width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;font-size:2.6rem;box-shadow:0 4px 24px rgba(59,130,246,0.18);border:none;cursor:pointer;z-index:1000;display:flex;align-items:center;justify-content:center;transition:background 0.2s,box-shadow 0.2s;">
+    +
+  </button>
+  <script>
+    // Tab switching
+    const tabSignin = document.getElementById('tab-signin');
+    const tabRegister = document.getElementById('tab-register');
+    const sectionSignin = document.getElementById('section-signin');
+    const sectionRegister = document.getElementById('section-register');
+    tabSignin.onclick = () => {
+      tabSignin.classList.add('active');
+      tabRegister.classList.remove('active');
+      sectionSignin.classList.add('active');
+      sectionRegister.classList.remove('active');
+    };
+    tabRegister.onclick = () => {
+      tabRegister.classList.add('active');
+      tabSignin.classList.remove('active');
+      sectionRegister.classList.add('active');
+      sectionSignin.classList.remove('active');
+    };
+    // FAB for create account
+    document.getElementById('fab-create-account').onclick = function() {
+      tabRegister.click();
+      setTimeout(() => {
+        sectionRegister.scrollIntoView({behavior:'smooth',block:'center'});
+      }, 100);
+    };
+    // Placeholder JS for form submission (to be replaced with real backend calls)
+    document.getElementById('login-form').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('login-error').textContent = 'Email/password login coming soon!';
+    };
+    document.getElementById('register-form').onsubmit = function(e) {
+      e.preventDefault();
+      const pw = document.getElementById('register-password').value;
+      const cpw = document.getElementById('register-confirm').value;
+      const errorDiv = document.getElementById('register-error');
+      const successDiv = document.getElementById('register-success');
+      // Password strength regex
+      const strongPw = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]).{8,}$/;
+      if (!strongPw.test(pw)) {
+        errorDiv.textContent = 'Password must be at least 8 characters and include uppercase, lowercase, number, and special character.';
+        successDiv.textContent = '';
+        return;
+      }
+      if (pw !== cpw) {
+        errorDiv.textContent = 'Passwords do not match!';
+        successDiv.textContent = '';
+        return;
+      }
+      errorDiv.textContent = '';
+      successDiv.textContent = 'Registration feature coming soon!';
+    };
+  </script>
+</body>
+</html>

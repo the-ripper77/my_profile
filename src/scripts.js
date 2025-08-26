@@ -1,120 +1,10 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> PG Official</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
-    <! icon Reference>
-</head>
-<body>
-    <!-- Sidebar Overlay for Mobile -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-    
-    <aside aria-label="Sidebar" id="sidebar" class="d-flex flex-column align-items-end">
-        <! This section creates the left sidebar with navigation links.>
-        <header class="profile-wrapper">
-        <a href="#" id="avatar" class="rounded-circle">
-            <img src="images/my my.jpg" width="120" height="150" alt="avatar" onerror="this.style.display='none'">
-        </a>
-            <h1 class="site-title"> Pratik Giri </h1>
-            <p class="site-subtitle fst-italic mb-0">I may not belive in myself, but I belive in what I'm doing</p>
-        </header>
-        <nav class = "flex-column flex-grow-1 w-100 ps-0">
-            <ul class = "nav">
-                <li class="nav-item">
-                    <a href="profolio.html" class="nav-link">
-                        <i class="fa-fw fas fa-home"></i>
-                        <span>Home</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href = "categories.html" class="nav-link">
-                        <i class="fa-fw fas fa-th-large"></i>
-                        <span>Categories</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href = "archives.html" class="nav-link">
-                        <i class="fa-fw fas fa-archive"></i>
-                        <span>Archives</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="friends.html" class="nav-link">
-                        <i class="fa-fw fas fa-users"></i>
-                        <span>Friends</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href = "about.html" class="nav-link active">
-                        <i class="fa-fw fas fa-user"></i>
-                        <span>About</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="sidebar-bottom d-flex flex-wrap align-items-center w-100">
-            <a href="https://www.instagram.com/pratik.girii?igsh=YmQ5ODk3c2Z6aTFt" aria-label="instgram" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i>
-            </a>
-            <a href="https://github.com/the-ripper77" aria-label="github" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:prateek.giirii@gmail.com" aria-label="email" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-envelope"></i>
-            </a>
-            <a href="https://www.facebook.com/share/15Ctwfs3bq/" aria-label="facebook" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-facebook"></i>
-            </a>
-        </div>
-    </aside>
-    
-   
-    <main aria-label="Main Content">
-        <div id="main-wrapper" class="d-flex justify-content-center">
-            <div class="container d-flex flex-column px-xxl-5">
-                <header id="topbar-wrapper" aria-label="Top Bar">
-                    <div id="topbar" class="d-flex align-items-center justify-content-between px-lg-3 h-100">
-                        <div class="header-left">
-                            <button type="button" id="sidebar-trigger" class="btn btn-link">
-                                <i class="fas fa-bars fa-fw"></i>
-                            </button>
-                            <div id="topbar-title">The Ripper</div>
-                        </div>
-                        <div class="header-center">
-                            <!-- Search engine and dark mode toggle removed as requested -->
-                        </div>
-                    </div>
-                </header>
-                
-                <!-- Blog Content -->
-                <!-- Blog content removed as requested -->
-            </div>
-        </div>
-        <aside aria-label="Scroll to Top">
-            <button id="back-to-top" type="button" class="btn btn-lg btn-box-shadow">
-                <i class="fas fa-angle-up"></i>
-            </button>
-        </aside>    
-    </main>
-    
-   
-    <footer aria-label="Site Info">
-        <p>
-            © <time>2025</time>
-            <a href="https://www.instagram.com/pratik.girii?igsh=YmQ5ODk3c2Z6aTFt">Pratik Giri</a>
-        </p>
-    </footer>
-</div>
-
-<script>
 // Sidebar toggle functionality
 document.addEventListener('DOMContentLoaded', function() {
     const sidebar = document.getElementById('sidebar');
     const sidebarTrigger = document.getElementById('sidebar-trigger');
     const sidebarOverlay = document.getElementById('sidebar-overlay');
     const main = document.querySelector('main');
+    const sidebarCloseBtn = document.getElementById('sidebar-close-btn');
     
     // Check if we're on mobile
     function isMobile() {
@@ -151,6 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listeners
     sidebarTrigger.addEventListener('click', toggleSidebar);
     sidebarOverlay.addEventListener('click', closeSidebar);
+    if (sidebarCloseBtn) {
+        sidebarCloseBtn.addEventListener('click', closeSidebar);
+    }
     
     // Handle window resize
     window.addEventListener('resize', function() {
@@ -286,7 +179,4 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize button state
     toggleBackToTopButton();
-});
-</script>
-</body>
-</html>
+}); 

@@ -1,0 +1,310 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PG Official</title>
+    <link rel="stylesheet" href="/public/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+</head>
+<body>
+    <!-- Sidebar Overlay for Mobile -->
+    <div id="sidebar-overlay"></div>
+    
+    <!-- Sidebar Navigation -->
+    <aside aria-label="Sidebar" id="sidebar">
+        <header class="profile-wrapper">
+            <a href="#" id="avatar">
+                <img src="/src/assets/ProfileDP.jpg" width="120" height="150" alt="avatar" onerror="this.style.display='none'">
+            </a>
+            <h1 class="site-title">Pratik Giri</h1>
+            <p class="site-subtitle">I may not believe in myself, but I believe in what I'm doing</p>
+        </header>
+        <button type="button" id="sidebar-close-btn" aria-label="Close sidebar" class="sidebar-close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="#home" id="nav-home" class="nav-link active">
+                        <i class="fa-fw fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#categories" id="nav-categories" class="nav-link">
+                        <i class="fa-fw fas fa-th-large"></i>
+                        <span>Categories</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#archives" id="nav-archives" class="nav-link">
+                        <i class="fa-fw fas fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#friends" id="nav-friends" class="nav-link">
+                        <i class="fa-fw fas fa-users"></i>
+                        <span>Friends</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" id="nav-about" class="nav-link">
+                        <i class="fa-fw fas fa-user"></i>
+                        <span>About</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <div class="sidebar-bottom">
+            <a href="https://www.instagram.com/pratik.girii?igsh=YmQ5ODk3c2Z6aTFt" aria-label="instgram" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/the-ripper77" aria-label="github" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:prateek.giirii@gmail.com" aria-label="email" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.facebook.com/share/15Ctwfs3bq/" aria-label="facebook" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook"></i>
+            </a>
+        </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main aria-label="Main Content">
+        <div id="main-wrapper">
+            <div class="container">
+                <!-- Top Bar -->
+                <header aria-label="Top Bar">
+                    <div id="topbar">
+                        <div class="header-left">
+                            <button type="button" id="sidebar-trigger">
+                                <i class="fas fa-bars fa-fw"></i>
+                            </button>
+                            <div id="topbar-title">The Ripper</div>
+                        </div>
+                        <div class="header-center">
+                            <form id="search" role="search" aria-label="site search" action="#" onsubmit="return false;">
+                                <div class="search-container">
+                                    <div class="search-input-wrapper">
+                                        <i class="fas fa-search fa-fw search-icon"></i>
+                                        <input type="search" aria-label="Search site" autocomplete="off" placeholder="Search" class="search-input" id="search-input">
+                                    </div>
+                                    <div class="search-dropdown" id="search-dropdown">
+                                        <div class="search-section">
+                                            <h4 class="search-section-title">Recent</h4>
+                                            <div class="search-item">
+                                                <img src="images/my my.jpg" alt="Recent search" class="search-item-img">
+                                                <div class="search-item-info">
+                                                    <span class="search-item-name">Web Development</span>
+                                                    <span class="search-item-type">Article</span>
+                                                </div>
+                                                <button class="search-item-remove">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                            <div class="search-item">
+                                                <img src="images/my_image.jpg" alt="Recent search" class="search-item-img">
+                                                <div class="search-item-info">
+                                                    <span class="search-item-name">Coding Tips</span>
+                                                    <span class="search-item-type">Post</span>
+                                                </div>
+                                                <button class="search-item-remove">
+                                                    <i class="fas fa-times"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="search-section">
+                                            <h4 class="search-section-title">Suggested</h4>
+                                            <div class="search-item">
+                                                <img src="images/Sample1 (1).png" alt="Suggested" class="search-item-img">
+                                                <div class="search-item-info">
+                                                    <span class="search-item-name">JavaScript</span>
+                                                    <span class="search-item-type">Category</span>
+                                                </div>
+                                            </div>
+                                            <div class="search-item">
+                                                <img src="images/Sample1 (2).png" alt="Suggested" class="search-item-img">
+                                                <div class="search-item-info">
+                                                    <span class="search-item-name">React</span>
+                                                    <span class="search-item-type">Category</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <button type="button" class="dark-mode-toggle-btn" id="dark-mode-toggle-btn" aria-label="Toggle dark mode">
+                                <i class="fas fa-moon"></i>
+                            </button>
+                        </div>
+                    </div>
+                </header>
+                <!-- Single Page Sections -->
+                <section id="home" aria-label="Home">
+                    <div id="home-content"></div>
+                </section>
+
+                <section id="categories" aria-label="Categories">
+                    <div id="categories-content"></div>
+                </section>
+
+                <section id="archives" aria-label="Archives">
+                    <div id="archives-content"></div>
+                </section>
+
+                <section id="friends" aria-label="Friends">
+                    <div id="friends-content"></div>
+                </section>
+
+                <section id="about" aria-label="About">
+                    <div id="about-content"></div>
+                </section>
+
+            </div>
+        </div>
+        <aside aria-label="Scroll to Top">
+            <button id="back-to-top" type="button">
+                <i class="fas fa-angle-up"></i>
+            </button>
+        </aside>    
+    </main>
+    
+    <footer aria-label="Site Info">
+        <p>
+            © <time>2025</time>
+            <a href="https://www.instagram.com/pratik.girii?igsh=YmQ5ODk3c2Z6aTFt">Pratik Giri</a>
+        </p>
+    </footer>
+
+<link rel="stylesheet" href="/src/styles/home.css">
+<link rel="stylesheet" href="/src/styles/categories.css">
+<link rel="stylesheet" href="/src/styles/archives.css">
+<link rel="stylesheet" href="/src/styles/friends.css">
+<link rel="stylesheet" href="/src/styles/about.css">
+<script src="../src/scripts.js"></script>
+<!-- Single-page navigation helpers -->
+<script>
+  (function() {
+    const linkIds = ['nav-home','nav-categories','nav-archives','nav-friends','nav-about'];
+    const sectionIds = ['home','categories','archives','friends','about'];
+
+    function updateActiveByHash(hash) {
+      const id = hash.replace('#','') || 'home';
+      linkIds.forEach(linkId => {
+        const el = document.getElementById(linkId);
+        if (!el) return;
+        const target = el.getAttribute('href').replace('#','');
+        const isActive = target === id;
+        el.classList.toggle('active', isActive);
+        if (isActive) el.setAttribute('aria-current', 'page'); else el.removeAttribute('aria-current');
+      });
+    }
+
+    function smoothScrollToId(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const closeBtn = document.getElementById('sidebar-close-btn');
+      if (closeBtn) closeBtn.click();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      // Click + hover behavior
+      linkIds.forEach(linkId => {
+        const link = document.getElementById(linkId);
+        if (!link) return;
+        const target = (link.getAttribute('href') || '#').replace('#','');
+        let hoverTimer = null;
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          smoothScrollToId(target);
+        });
+        link.addEventListener('mouseenter', function() {
+          hoverTimer = setTimeout(() => smoothScrollToId(target), 200);
+        });
+        link.addEventListener('mouseleave', function() {
+          if (hoverTimer) { clearTimeout(hoverTimer); hoverTimer = null; }
+        });
+      });
+
+      // Scrollspy
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            updateActiveByHash('#' + entry.target.id);
+            history.replaceState(null, '', '#' + entry.target.id);
+          }
+        });
+      }, { rootMargin: '0px 0px -70% 0px', threshold: 0.2 });
+
+      sectionIds.forEach(id => {
+        const sec = document.getElementById(id);
+        if (sec) observer.observe(sec);
+      });
+
+      // Load Home content from external HTML via home.js
+      (function loadHome() {
+        const mount = document.getElementById('home-content');
+        if (!mount) return;
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.textContent = "import { renderHomeInto } from '/src/components/home.js'; renderHomeInto(document.getElementById('home-content'));";
+        document.body.appendChild(script);
+      })();
+
+      // Load Categories content from external HTML via categories.js
+      (function loadCategories() {
+        const mount = document.getElementById('categories-content');
+        if (!mount) return;
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.textContent = "import { renderCategoriesInto } from '/src/components/categories.js'; renderCategoriesInto(document.getElementById('categories-content'));";
+        document.body.appendChild(script);
+      })();
+
+      // Load Archives content from external HTML via archives.js
+      (function loadArchives() {
+        const mount = document.getElementById('archives-content');
+        if (!mount) return;
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.textContent = "import { renderArchivesInto } from '/src/components/archives.js'; renderArchivesInto(document.getElementById('archives-content'));";
+        document.body.appendChild(script);
+      })();
+
+      // Load Friends content from external HTML via friends.js
+      (function loadFriends() {
+        const mount = document.getElementById('friends-content');
+        if (!mount) return;
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.textContent = "import { renderFriendsInto } from '/src/components/friends.js'; renderFriendsInto(document.getElementById('friends-content'));";
+        document.body.appendChild(script);
+      })();
+
+      // Load About content from external HTML via about.js
+      (function loadAbout() {
+        const mount = document.getElementById('about-content');
+        if (!mount) return;
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.textContent = "import { renderAboutInto } from '/src/components/about.js'; renderAboutInto(document.getElementById('about-content'));";
+        document.body.appendChild(script);
+      })();
+
+      // Initialize from hash or default
+      if (location.hash) {
+        updateActiveByHash(location.hash);
+        const initial = location.hash.replace('#','');
+        setTimeout(() => smoothScrollToId(initial), 0);
+      } else {
+        updateActiveByHash('#home');
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

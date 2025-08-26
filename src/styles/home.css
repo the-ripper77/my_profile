@@ -1,0 +1,60 @@
+.home-hero {
+  display: grid;
+  place-items: center;
+  min-height: 55vh;
+  background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.home-hero__title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin: 0 0 .5rem;
+}
+
+.home-hero__subtitle {
+  opacity: .95;
+}
+
+.home-blog {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem 3rem;
+}
+
+.post {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.06);
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.post__title {
+  margin: 0 0 .25rem;
+}
+
+.post__meta {
+  color: #64748b;
+  font-size: .9rem;
+  margin: 0 0 1rem;
+}
+
+.post__content h3 {
+  margin: 1.25rem 0 .5rem;
+}
+
+.post__content ul,
+.post__content ol {
+  padding-left: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .home-hero { color: #e5e7eb; }
+  .post { background: #0b1220; box-shadow: 0 6px 24px rgba(0,0,0,.35); }
+  .post__meta { color: #94a3b8; }
+}
+
+
+
